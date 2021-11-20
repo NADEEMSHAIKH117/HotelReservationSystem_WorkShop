@@ -10,11 +10,11 @@ public class HotelReservationTest {
 	@Test
 	   public void whenAddedHotel_ShouldReturn_AddedHotel() {
         try{
-            boolean isValid1 = hotelReservation.addHotel( new Hotel("LakeWood",110,90));
+            boolean isValid1 = hotelReservation.addHotel( new Hotel("LakeWood","Regular",110,90));
             assertTrue(isValid1);
-            boolean isValid2 = hotelReservation.addHotel( new Hotel("Bridgewood",160,50));
+            boolean isValid2 = hotelReservation.addHotel( new Hotel("Bridgewood","Regular",160,50));
             assertTrue(isValid2);
-            boolean isValid3 = hotelReservation.addHotel( new Hotel("Ridgewood",220,150));
+            boolean isValid3 = hotelReservation.addHotel( new Hotel("Ridgewood","Regular",220,150));
             assertTrue(isValid3);
         }catch (Exception e){
             e.printStackTrace();
@@ -26,4 +26,10 @@ public class HotelReservationTest {
         HotelReservationSystem cheapHotel = new HotelReservationSystem();
         cheapHotel.findCheapestHotel();
     }
+    
+    @Test
+	public void toFindTheCheapestHotel_OnWeekdayAndWeekend() {
+		HotelReservationSystem cheapHotel = new HotelReservationSystem();
+		cheapHotel.findCheapestHotel_Weekday_Weekend();
+	}
 }
