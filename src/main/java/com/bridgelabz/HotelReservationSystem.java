@@ -22,7 +22,9 @@ public class HotelReservationSystem {
      * @return - cheapestHotel - The cheapest hotel in the list
      */
     public int findCheapestHotel(){
-        int LakeWoodRate = 110; int BridgeWoodRate = 160; int Ridgewood = 220;
+        int LakeWoodRate = 110;
+        int BridgeWoodRate = 160;
+        int Ridgewood = 220;
         int cheapestHotel = (LakeWoodRate>BridgeWoodRate) ?
                 (LakeWoodRate>Ridgewood ? LakeWoodRate : Ridgewood) :
                 (BridgeWoodRate>Ridgewood ? BridgeWoodRate : Ridgewood) ;
