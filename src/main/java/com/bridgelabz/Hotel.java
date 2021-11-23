@@ -5,12 +5,22 @@ public class Hotel {
 	private String customerType;
 	private int hotelRegularRate;
 	private int hotelWeekendRate;
+	private int hotelStarRating; 
 	
-	public Hotel(String hotelName, String customerType, int hotelRegulrRate, int hotelWeekendRate) {
+	public Hotel(String hotelName, String customerType, int hotelRegulrRate, int hotelWeekendRate, int hotelStarRating) {
 		this.hotelName = hotelName;
 		this.customerType = customerType;
 		this.hotelRegularRate = hotelRegulrRate;
 		this.hotelWeekendRate = hotelWeekendRate;
+		this.hotelStarRating = hotelStarRating;
+	}
+
+	public int getHotelStarRating() {
+		return hotelStarRating;
+	}
+
+	public void setHotelStarRating(int hotelStarRating) {
+		this.hotelStarRating = hotelStarRating;
 	}
 
 	public String getHotelName() {

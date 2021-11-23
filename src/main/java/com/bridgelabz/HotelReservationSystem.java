@@ -1,13 +1,12 @@
 package com.bridgelabz;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
- * Purpose - Ability to find the cheapest Hotel for a given Date Range based on
- * weekday and weekend
+ * Purpose - Ability to add ratings to each Hotel
  * 
  */
 
@@ -18,29 +17,29 @@ public class HotelReservationSystem {
 		this.hotels = new ArrayList<Hotel>();
 	}
 
-    /**
-     * This method is used to add hotel to the Hotel List
-     */
-    public boolean addHotel(Hotel hotel) {
-        return this.hotels.add(hotel);
-    }
+	/**
+	 * This method is used to add hotel to the Hotel List
+	 */
+	public boolean addHotel(Hotel hotel) {
+		return this.hotels.add(hotel);
+	}
 
-    /**
-     * This method is used to find the cheapest hotel in the HotelList
-     * @return - cheapestHotel - The cheapest hotel in the list
-     */
-    public int findCheapestHotel(){
-        int LakeWoodRate = 110;
-        int BridgeWoodRate = 160;
-        int Ridgewood = 220;
-        int cheapestHotel = (LakeWoodRate>BridgeWoodRate) ?
-                (LakeWoodRate>Ridgewood ? LakeWoodRate : Ridgewood) :
-                (BridgeWoodRate>Ridgewood ? BridgeWoodRate : Ridgewood) ;
-        System.out.println("The cheapest Hotel is " +cheapestHotel);
-        return cheapestHotel;
-    }
-    
-    public void findCheapestHotel_Weekday_Weekend() {
+	/**
+	 * This method is used to find the cheapest hotel in the HotelList
+	 * 
+	 * @return - cheapestHotel - The cheapest hotel in the list
+	 */
+	public int findCheapestHotel() {
+		int LakeWoodRate = 110;
+		int BridgeWoodRate = 160;
+		int Ridgewood = 220;
+		int cheapestHotel = (LakeWoodRate > BridgeWoodRate) ? (LakeWoodRate > Ridgewood ? LakeWoodRate : Ridgewood)
+				: (BridgeWoodRate > Ridgewood ? BridgeWoodRate : Ridgewood);
+		System.out.println("The cheapest Hotel is " + cheapestHotel);
+		return cheapestHotel;
+	}
+
+	public void findCheapestHotel_Weekday_Weekend() {
 		String hotel = null;
 		int totalLakeWoodCost = 0;
 		int totalBridgeWoodCost = 0;
@@ -70,12 +69,12 @@ public class HotelReservationSystem {
 		if (totalRidgeWoodCost < totalLakeWoodCost && totalRidgeWoodCost < totalBridgeWoodCost) {
 			System.out.println("RidgeWood with total rates $370.");
 		}
+	}
 
-    }
-    public static void main(String[] args) throws Exception {
-		Hotel hotel1 = new Hotel("LakeWood", "Regular", 110, 90);
-		Hotel hotel2 = new Hotel("BridgeWood", "Regular", 150, 50);
-		Hotel hotel3 = new Hotel("RidgeWood", "Regular", 220, 150);
+	public static void main(String[] args) throws Exception {
+		Hotel hotel1 = new Hotel("LakeWood", "Regular", 110, 90, 3);
+		Hotel hotel2 = new Hotel("BridgeWood", "Regular", 150, 50, 4);
+		Hotel hotel3 = new Hotel("RidgeWood", "Regular", 220, 150, 5);
 		String sDate1 = "10-09-2020";
 		String sDate2 = "11-09-2020";
 		Date date1 = new SimpleDateFormat("dd-MM-yyyy").parse(sDate1);
